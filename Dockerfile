@@ -36,7 +36,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     xfce4 ibus ibus-clutter ibus-gtk ibus-gtk3 \
     gnome-shell ubuntu-gnome-desktop gnome-session gdm3 tasksel \
     gnome-session gdm3 tasksel \
-    firefox-esr
+    firefox
 
 RUN apt-get autoclean
 RUN apt-get autoremove
