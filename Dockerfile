@@ -2,7 +2,7 @@
 # Start with Ubuntu Groovy Gorilla
 # ------------------------------------------------------------
 
-FROM ubuntu
+FROM ubuntu:latest
 
 # ------------------------------------------------------------
 # Set environment variables
