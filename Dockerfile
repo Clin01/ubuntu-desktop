@@ -16,6 +16,9 @@ RUN apt -y upgrade
 
 RUN apt-get -y install sudo
 
+RUN echo 'debconf debconf/frontend select Noninteractive' | sudo debconf-set-selections
+RUN sudo apt-get install -y -q
+
 # ------------------------------------------------------------
 # Set the sources
 # ------------------------------------------------------------
