@@ -35,6 +35,10 @@ RUN apt-get install -y --no-install-recommends
 RUN apt-get update -y
 RUN apt-get install -y dbus-x11
 
+RUN  dpkg --configure -a
+
+RUN sudo apt-get install -f
+
 RUN dbus-x11 nano sudo bash net-tools 
 RUN novnc x11vnc xvfb 
 RUN zip unzip expect supervisor curl git wget g++ ssh terminator htop gnupg2 locales 
