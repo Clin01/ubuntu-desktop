@@ -35,9 +35,9 @@ RUN apt-get install -y --no-install-recommends
 RUN apt-get update -y
 RUN apt-get install -y dbus-x11
 
-RUN  dpkg --configure -a
+RUN dpkg --configure -a
 
-RUN sudo apt-get install -f
+RUN apt-get install -f
 
 RUN dbus-x11 nano sudo bash net-tools 
 RUN novnc x11vnc xvfb 
