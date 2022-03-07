@@ -10,7 +10,11 @@ FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get install sudo
+RUN apt update
+
+RUN apt -y upgrade 
+
+RUN apt-get -y install sudo
 
 # ------------------------------------------------------------
 # Set the sources
