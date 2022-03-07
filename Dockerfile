@@ -30,7 +30,11 @@ RUN echo 'deb http://ubuntu.mirror.rain.co.za/ubuntu/ focal main restricted univ
 # ------------------------------------------------------------
 
 RUN apt-get update
-RUN apt-get install -y --no-install-recommends 
+RUN apt-get install -y --no-install-recommends
+
+RUN apt-get update -y
+RUN apt-get install -y dbus-x11
+
 RUN dbus-x11 nano sudo bash net-tools 
 RUN novnc x11vnc xvfb 
 RUN zip unzip expect supervisor curl git wget g++ ssh terminator htop gnupg2 locales 
