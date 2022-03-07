@@ -1,5 +1,5 @@
 # ------------------------------------------------------------ 
-# Start with Ubuntu Groovy Gorilla
+# Start with Ubuntu focal Gorilla
 # ------------------------------------------------------------
 
 FROM ubuntu:latest
@@ -14,15 +14,15 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Set the sources
 # ------------------------------------------------------------
 
-RUN echo 'deb http://ubuntu.mirror.rain.co.za/ubuntu/ groovy main restricted universe multiverse\n'\
-'deb http://ubuntu.mirror.rain.co.za/ubuntu/ groovy-security main restricted universe multiverse\n'\
-'deb http://ubuntu.mirror.rain.co.za/ubuntu/ groovy-updates main restricted universe multiverse\n'\
-'deb http://ubuntu.mirror.rain.co.za/ubuntu/ groovy-backports main restricted universe multiverse\n'\
-'deb-src http://ubuntu.mirror.rain.co.za/ubuntu/ groovy main restricted universe multiverse\n'\
-'deb-src http://ubuntu.mirror.rain.co.za/ubuntu/ groovy-security main restricted universe multiverse\n'\
-'deb-src http://ubuntu.mirror.rain.co.za/ubuntu/ groovy-updates main restricted universe multiverse\n'\
-'deb-src http://ubuntu.mirror.rain.co.za/ubuntu/ groovy-proposed main restricted universe multiverse\n'\
-'deb-src http://ubuntu.mirror.rain.co.za/ubuntu/ groovy-backports main restricted universe multiverse\n'\
+RUN echo 'deb http://ubuntu.mirror.rain.co.za/ubuntu/ focal main restricted universe multiverse\n'\
+'deb http://ubuntu.mirror.rain.co.za/ubuntu/ focal-security main restricted universe multiverse\n'\
+'deb http://ubuntu.mirror.rain.co.za/ubuntu/ focal-updates main restricted universe multiverse\n'\
+'deb http://ubuntu.mirror.rain.co.za/ubuntu/ focal-backports main restricted universe multiverse\n'\
+'deb-src http://ubuntu.mirror.rain.co.za/ubuntu/ focal main restricted universe multiverse\n'\
+'deb-src http://ubuntu.mirror.rain.co.za/ubuntu/ focal-security main restricted universe multiverse\n'\
+'deb-src http://ubuntu.mirror.rain.co.za/ubuntu/ focal-updates main restricted universe multiverse\n'\
+'deb-src http://ubuntu.mirror.rain.co.za/ubuntu/ focal-proposed main restricted universe multiverse\n'\
+'deb-src http://ubuntu.mirror.rain.co.za/ubuntu/ focal-backports main restricted universe multiverse\n'\
 '' > /etc/apt/sources.list
 
 # ------------------------------------------------------------
