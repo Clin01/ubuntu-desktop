@@ -43,7 +43,7 @@ RUN sudo apt-get upgrade -y
 RUN sudo apt-get install -y dbus
 
 RUN sudo apt-get update
-RUN sudo apt-get install xorg openbox
+RUN sudo apt-get -y install xorg openbox
 
 RUN sudo apt-get update -y
 RUN sudo apt-get install -y dbus-x11
