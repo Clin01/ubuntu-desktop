@@ -10,6 +10,8 @@ FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND=noninteractive
 
+RUN apt-get install sudo
+
 # ------------------------------------------------------------
 # Set the sources
 # ------------------------------------------------------------
@@ -29,32 +31,32 @@ RUN echo 'deb http://ubuntu.mirror.rain.co.za/ubuntu/ focal main restricted univ
 # Install and Configure
 # ------------------------------------------------------------
 
-RUN apt-get update
-RUN apt-get install -y --no-install-recommends
+RUN sudo apt-get update
+RUN sudo apt-get install -y --no-install-recommends
 
-RUN apt-get update
-RUN apt-get upgrade -y
-RUN apt-get install -y dbus
+RUN sudo apt-get update
+RUN sudo apt-get upgrade -y
+RUN sudo apt-get install -y dbus
 
-RUN apt-get update -y
-RUN apt-get install -y dbus-x11
+RUN sudo apt-get update -y
+RUN sudo apt-get install -y dbus-x11
 
-RUN dpkg --configure -a
+RUN sudo dpkg --configure -a
 
-RUN apt-get install -f
+RUN sudo apt-get install -f
 
-RUN dbus-x11 nano sudo bash net-tools 
-RUN novnc x11vnc xvfb 
-RUN zip unzip expect supervisor curl git wget g++ ssh terminator htop gnupg2 locales 
-RUN xfce4 ibus ibus-clutter ibus-gtk ibus-gtk3 
-RUN gnome-shell ubuntu-gnome-desktop gnome-session gdm3 tasksel 
-RUN gnome-session gdm3 tasksel 
+RUN sudo dbus-x11 nano sudo bash net-tools 
+RUN sudo novnc x11vnc xvfb 
+RUN sudo zip unzip expect supervisor curl git wget g++ ssh terminator htop gnupg2 locales 
+RUN sudo xfce4 ibus ibus-clutter ibus-gtk ibus-gtk3 
+RUN sudo gnome-shell ubuntu-gnome-desktop gnome-session gdm3 tasksel 
+RUN sudo gnome-session gdm3 tasksel 
 RUN firefox
 
-RUN apt-get autoclean
-RUN apt-get autoremove
+RUN sudo apt-get autoclean
+RUN sudo apt-get autoremove
 
-RUN dpkg-reconfigure locales
+RUN sudo dpkg-reconfigure locales
 
 # ------------------------------------------------------------
 # Add the Resources and Set Up the System
