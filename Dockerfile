@@ -2,7 +2,7 @@
 # Start with Ubuntu Groovy Gorilla
 # ------------------------------------------------------------
 
-FROM ubuntu:20.10
+FROM ubuntu
 
 # ------------------------------------------------------------
 # Set environment variables
