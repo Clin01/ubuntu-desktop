@@ -29,14 +29,15 @@ RUN echo 'deb http://ubuntu.mirror.rain.co.za/ubuntu/ groovy main restricted uni
 # Install and Configure
 # ------------------------------------------------------------
 
-RUN apt-get update && apt-get install -y --no-install-recommends 
-RUN    dbus-x11 nano sudo bash net-tools 
-RUN    novnc x11vnc xvfb 
-RUN    zip unzip expect supervisor curl git wget g++ ssh terminator htop gnupg2 locales 
-RUN    xfce4 ibus ibus-clutter ibus-gtk ibus-gtk3 
-RUN    gnome-shell ubuntu-gnome-desktop gnome-session gdm3 tasksel 
-RUN    gnome-session gdm3 tasksel 
-RUN    firefox
+RUN apt-get update
+RUN apt-get install -y --no-install-recommends 
+RUN dbus-x11 nano sudo bash net-tools 
+RUN novnc x11vnc xvfb 
+RUN zip unzip expect supervisor curl git wget g++ ssh terminator htop gnupg2 locales 
+RUN xfce4 ibus ibus-clutter ibus-gtk ibus-gtk3 
+RUN gnome-shell ubuntu-gnome-desktop gnome-session gdm3 tasksel 
+RUN gnome-session gdm3 tasksel 
+RUN firefox
 
 RUN apt-get autoclean
 RUN apt-get autoremove
