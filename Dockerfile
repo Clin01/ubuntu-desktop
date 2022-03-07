@@ -32,6 +32,10 @@ RUN echo 'deb http://ubuntu.mirror.rain.co.za/ubuntu/ focal main restricted univ
 RUN apt-get update
 RUN apt-get install -y --no-install-recommends
 
+RUN apt-get update
+RUN apt-get upgrade -y
+RUN apt-get install -y dbus
+
 RUN apt-get update -y
 RUN apt-get install -y dbus-x11
 
