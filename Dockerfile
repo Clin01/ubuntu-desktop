@@ -1,4 +1,4 @@
-# ------------------------------------------------------------ 
+# ------------------------------------------------------------
 # Start with Ubuntu focal Gorilla
 # ------------------------------------------------------------
 
@@ -7,17 +7,8 @@ FROM ubuntu:latest
 # ------------------------------------------------------------
 # Set environment variables
 # ------------------------------------------------------------
-
+ENV SHELL=/bin/bash
 ENV DEBIAN_FRONTEND=noninteractive
-
-RUN apt update
-
-RUN apt -y upgrade 
-
-RUN apt-get -y install sudo
-
-RUN echo 'debconf debconf/frontend select Noninteractive' | sudo debconf-set-selections
-RUN sudo apt-get install -y -q
 
 # ------------------------------------------------------------
 # Set the sources
@@ -38,42 +29,19 @@ RUN echo 'deb http://ubuntu.mirror.rain.co.za/ubuntu/ focal main restricted univ
 # Install and Configure
 # ------------------------------------------------------------
 
-RUN sudo apt-get update
-RUN sudo apt-get install -y --no-install-recommends
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    dbus-x11 nano sudo bash net-tools \
+    novnc x11vnc xvfb \
+    zip unzip expect supervisor curl git wget g++ ssh terminator htop gnupg2 locales \
+    xfce4 ibus ibus-clutter ibus-gtk ibus-gtk3 \
+    gnome-shell ubuntu-gnome-desktop gnome-session gdm3 tasksel \
+    gnome-session gdm3 tasksel \
+    firefox
 
-RUN sudo apt-get update
-RUN sudo apt-get upgrade -y
-RUN sudo apt-get install -y dbus
+RUN apt-get autoclean
+RUN apt-get autoremove
 
-RUN sudo apt-get update
-RUN sudo apt-get -y install xorg openbox
-
-RUN sudo apt-get update -y
-RUN sudo apt-get install -y dbus-x11
-
-RUN sudo apt-get install -y xvfb
-RUN sudo apt-get -y install xorg xvfb gtk2-engines-pixbuf
-RUN sudo apt-get -y install dbus-x11 xfonts-base xfonts-100dpi xfonts-75dpi xfonts-cyrillic xfonts-scalable
-
-RUN sudo Xvfb -ac :99 -screen 0 1280x1024x16 &
-ENV DISPLAY=:99
-
-RUN sudo dpkg --configure -a
-
-RUN sudo apt-get install -f
-
-RUN sudo dbus-x11 nano sudo bash net-tools 
-RUN sudo novnc x11vnc xvfb 
-RUN sudo zip unzip expect supervisor curl git wget g++ ssh terminator htop gnupg2 locales 
-RUN sudo xfce4 ibus ibus-clutter ibus-gtk ibus-gtk3 
-RUN sudo gnome-shell ubuntu-gnome-desktop gnome-session gdm3 tasksel 
-RUN sudo gnome-session gdm3 tasksel 
-RUN firefox
-
-RUN sudo apt-get autoclean
-RUN sudo apt-get autoremove
-
-RUN sudo dpkg-reconfigure locales
+RUN dpkg-reconfigure locales
 
 # ------------------------------------------------------------
 # Add the Resources and Set Up the System
